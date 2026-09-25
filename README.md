@@ -18,12 +18,12 @@ assets/fonts/         Self-hosted fonts
 
 1. Put photos in `photos/travel/` or `photos/cocktails/`
 2. Open `data/photos.js`, copy an entry in the `TRAVEL` or `COCKTAILS` list, and change it to your photo's path and text
-3. Hero background: change the image path in `index.html` (it appears in three places — search for `mirror-lake.jpg`). Landscape images work best
+3. Hero background: change the image path in `index.html` (it appears in three places — search for `queenstown.jpg`). Landscape images work best
 4. Delete any placeholder images you no longer use
 
 Travel photo fields: `src` path, `place` place name, `country`, `region` (used for the filter buttons), `year`, `note` a one-line caption.
 
-Cocktail fields: `src`, `name`, `bar`, `city`, `ingredients` list, `note` a one-line caption.
+Cocktail fields: `src` path. Optional: `name`, `ingredients` list, `note` a one-line caption — leave them out and the card shows just the photo.
 
 Contact links live in `SITE.links`. A link with `url` opens that address; a link with `copy` (like WeChat) copies the text to the clipboard when clicked.
 

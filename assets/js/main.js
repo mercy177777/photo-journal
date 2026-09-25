@@ -96,23 +96,19 @@
   /* ---------- cocktail menu ---------- */
   var cocktailGrid = $("#cocktailGrid");
   cocktailGrid.innerHTML = COCKTAILS.map(function (c, i) {
+    var body =
+      (c.name ? '<div class="card__row"><span class="card__name">' + esc(c.name) + '</span><span class="card__leader"></span></div>' : "") +
+      (c.ingredients && c.ingredients.length
+        ? '<p class="card__ingredients">' + c.ingredients.map(function (x) { return "<span>" + esc(x) + "</span>"; }).join("") + "</p>"
+        : "") +
+      (c.note ? '<p class="card__note">' + esc(c.note) + "</p>" : "");
     return (
       '<article class="card reveal" data-i="' + i + '" tabindex="0">' +
         '<div class="frame">' +
           '<span class="card__no">No. ' + pad(i + 1) + "</span>" +
-          '<img src="' + esc(c.src) + '" alt="' + esc(c.name) + '" loading="lazy" decoding="async" />' +
+          '<img src="' + esc(c.src) + '" alt="' + esc(c.name || "Cocktail") + '" loading="lazy" decoding="async" />' +
         "</div>" +
-        '<div class="card__body">' +
-          '<div class="card__row"><span class="card__name">' + esc(c.name) + '</span><span class="card__leader"></span>' +
-            (c.nameZh ? '<span class="card__zh">' + esc(c.nameZh) + "</span>" : "") + "</div>" +
-          (c.ingredients && c.ingredients.length
-            ? '<p class="card__ingredients">' + c.ingredients.map(function (x) { return "<span>" + esc(x) + "</span>"; }).join("") + "</p>"
-            : "") +
-          (c.bar || c.city
-            ? '<p class="card__where">' + esc(c.bar || "") + (c.bar && c.city ? " <em>—</em> " : "") + "<em>" + esc(c.city || "") + "</em></p>"
-            : "") +
-          (c.note ? '<p class="card__note">' + esc(c.note) + "</p>" : "") +
-        "</div>" +
+        (body ? '<div class="card__body">' + body + "</div>" : "") +
       "</article>"
     );
   }).join("");
@@ -163,7 +159,7 @@
     return TRAVEL.map(function (p, i) {
       return {
         i: i, src: p.src,
-        title: p.place + (p.placeZh ? "  ·  " + p.placeZh : ""),
+        title: p.place,
         sub: [p.country, p.year].filter(Boolean).join(" · ") + (p.note ? " — " + p.note : ""),
         region: p.region,
       };
@@ -173,8 +169,8 @@
     return COCKTAILS.map(function (c, i) {
       return {
         i: i, src: c.src,
-        title: c.name + (c.nameZh ? "  ·  " + c.nameZh : ""),
-        sub: [c.bar, c.city].filter(Boolean).join(", ") + (c.note ? " — " + c.note : ""),
+        title: c.name || "",
+        sub: c.note || "",
       };
     });
   }
