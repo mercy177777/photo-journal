@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Far Places &amp; Late Nights</title>
+  <meta name="description" content="travels and cocktails" />
+  <meta name="theme-color" content="#0e0b09" />
+  <meta property="og:title" content= />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="photos/travel/mirror-lake.jpg" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e0b09'/%3E%3Cpath d='M16 18h32L32 36z' fill='none' stroke='%23c9a26b' stroke-width='3' stroke-linejoin='round'/%3E%3Cpath d='M32 36v12M24 48h16' stroke='%23c9a26b' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/fonts/fonts.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preload" as="image" href="photos/travel/mirror-lake.jpg" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a href="#top" class="brand" id="brand">Mercy<span>·</span><em>Journal</em></a>
+    <nav>
+      <a href="#travels">Travels</a>
+      <a href="#bar">The Bar</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="hero__img" style="background-image:url('photos/travel/mirror-lake.jpg')"></div>
+      <div class="hero__shade"></div>
+      <div class="hero__content">
+        <p class="eyebrow reveal">A Personal Journal <span class="dot"></span> </p>
+        <h1 class="hero__title reveal">
+          <span>Far places,</span>
+          <em>late nights.</em>
+        </h1>
+      </div>
+      <div class="hero__meta reveal">
+        <span>Destinations</span>
+        <span class="bar"></span>
+        <span>Cocktails</span>
+      </div>
+      <a href="#intro" class="scroll-cue" aria-label="Scroll down"><span>Scroll</span><i></i></a>
+    </section>
+
+    <!-- ================= INTRO ================= -->
+    <section class="intro" id="intro">
+      <ol class="index reveal">
+        <li><a href="#travels"><span>I.</span> Travels</a></li>
+        <li><a href="#bar"><span>II.</span> The Bar</a></li>
+        <li><a href="#about"><span>III.</span> About</a></li>
+      </ol>
+      <p class="intro__text reveal" id="introText"></p>
+    </section>
+
+    <!-- ================= TRAVELS ================= -->
+    <section class="section" id="travels">
+      <div class="section__head reveal">
+        <span class="numeral">I.</span>
+        <h2>Travels</h2>
+        <p>Places that slowed me down.</p>
+      </div>
+      <div class="filters reveal" id="filters" role="tablist" aria-label="Filter by region"></div>
+      <div class="masonry" id="travelGrid"></div>
+    </section>
+
+    <!-- ================= INTERLUDE ================= -->
+    <section class="interlude">
+      <div class="interlude__ornament" aria-hidden="true">
+        <svg viewBox="0 0 120 20"><path d="M0 10h48M72 10h48" stroke="currentColor" stroke-width=".8"/><path d="M60 3l7 7-7 7-7-7z" fill="none" stroke="currentColor" stroke-width=".8"/></svg>
+      </div>
+      <blockquote class="reveal">
+        <p>“Every city deserves<br /><em>its own drink.</em>”</p>
+              </blockquote>
+    </section>
+
+    <!-- ================= BAR ================= -->
+    <section class="section section--bar" id="bar">
+      <div class="section__head reveal">
+        <span class="numeral">II.</span>
+        <h2>The Bar</h2>
+        <p>Glasses raised around the world.</p>
+      </div>
+      <div class="menu" id="cocktailGrid"></div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="about" id="about">
+      <div class="about__inner reveal">
+        <span class="numeral">III.</span>
+        <h2>About</h2>
+        <p id="aboutText"></p>
+        <div class="about__links" id="links"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> <span id="footName">Mercy</span></span>
+    <span class="footer__mid">Shot on the road · Served with bitters</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <!-- ================= LIGHTBOX ================= -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button class="lb-close" id="lbClose" aria-label="Close">
+      <svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">
+      <svg viewBox="0 0 24 24"><path d="M15 4l-8 8 8 8"/></svg>
+    </button>
+    <figure class="lb-figure">
+      <img id="lbImg" alt="" />
+      <figcaption>
+        <span class="lb-count" id="lbCount"></span>
+        <span class="lb-title" id="lbTitle"></span>
+        <span class="lb-sub" id="lbSub"></span>
+      </figcaption>
+    </figure>
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next">
+      <svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg>
+    </button>
+  </div>
+
+  <script src="data/photos.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
